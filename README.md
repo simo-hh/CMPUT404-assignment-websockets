@@ -21,6 +21,7 @@ References
 ==========
 
 * https://github.com/abramhindle/WebSocketsExamples
+* https://www.tutorialspoint.com/websockets/websockets_opening_connections.htm
 
 Contributors / Licensing
 ========================

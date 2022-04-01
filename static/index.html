@@ -121,6 +121,7 @@ function getPosition(e) {
 	}
 }
 
+//Reference: code from Assignment4
 function sendJSONXMLHTTPRequest(url, objects, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -156,11 +157,12 @@ function addEntity(entity, data) {
     world[entity] = data;
     drawNextFrame(); // (but should we?)
     //XXX: Send a XHTML Request that updates the entity you just modified!
-    var items = {};
-    items[entity] = data;
-    socket.send(JSON.stringify(items));
+    var obj = {};
+    obj[entity] = data;
+    socket.send(JSON.stringify(obj));
     sendJSONXMLHTTPRequest('http://' + host + '/entity/' + entity, data, callback);
 }
+
 var counter = 0;
 function addEntityWithoutName(data) {
     var name = "X"+(counter++)%100;
@@ -290,6 +292,7 @@ function wsSetup() {
     socket.onopen = function() {
         //XXX: TODO What are you going to do here?
         console.log("Connection established");
+        sendJSONXMLHTTPRequest('http://' + host + '/world', null, callback);
     };
     socket.onerror = function(msg) {
         debug("WebSocket Error:" + msg.data);

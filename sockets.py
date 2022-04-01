@@ -59,6 +59,7 @@ class World:
     def world(self):
         return self.space
 
+#Reference: https://github.com/abramhindle/WebSocketsExamples
 def send_all(msg):
     for client in clients:
         client.put( msg )
@@ -135,6 +136,7 @@ def flask_post_json():
     else:
         return json.loads(request.form.keys()[0])
 
+#Reference: code from Assignment4
 @app.route("/entity/<entity>", methods=['POST','PUT'])
 def update(entity):
     '''update the entities via this interface'''
