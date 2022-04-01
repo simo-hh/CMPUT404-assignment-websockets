@@ -17,6 +17,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+References
+==========
+
+* https://github.com/abramhindle/WebSocketsExamples
+
 Contributors / Licensing
 ========================
 
